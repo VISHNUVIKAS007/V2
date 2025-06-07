@@ -1053,3 +1053,14 @@ body {
         padding: 20px 0;
     }
 }
+
+@media (max-width: 1600px) and (min-width: 1201px) {
+    .sidebar-wrapper {
+        width: 32%;
+    }
+    .main-content-wrapper {
+        margin-left: 32%;
+        width: calc(100% - 32%);
+        min-width: 0;
+    }
+}
