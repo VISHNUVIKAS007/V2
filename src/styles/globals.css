@@ -832,6 +832,8 @@ body {
 
     .main-content-wrapper {
         margin-left: 45%;
+        width: calc(100% - 45%);
+        min-width: 0;
     }
 
     .sidebar {
@@ -860,6 +862,7 @@ body {
 
     .main-content-wrapper {
         margin-left: 0;
+        width: 100%;
     }
 
     .sidebar {
@@ -962,11 +965,13 @@ body {
     .section-heading,
     .section-title {
         margin-bottom: 40px;
+        font-size: clamp(20px, 5vw, 24px);
     }
 
     .section-heading:after,
     .section-title:after {
         width: 100%;
+        max-width: 200px;
     }
 
     .nav-links {
@@ -1017,40 +1022,332 @@ body {
     .tech-list {
         grid-template-columns: repeat(2, minmax(140px, 200px));
     }
+
+    /* Ensure text visibility on small screens */
+    .sidebar-header .name,
+    .sidebar-header .title {
+        font-size: clamp(28px, 6vw, 32px);
+        line-height: 1.2;
+    }
+
+    .sidebar-header .tagline {
+        font-size: var(--fz-md);
+        margin-bottom: 30px;
+        line-height: 1.4;
+    }
+
+    .hero-content h2,
+    .hero-name,
+    .hero-content h3,
+    .hero-title {
+        font-size: clamp(24px, 6vw, 28px);
+        line-height: 1.3;
+    }
+
+    .hero-content p,
+    .hero-description {
+        font-size: var(--fz-sm);
+        line-height: 1.6;
+    }
+
+    .about-text p {
+        font-size: var(--fz-sm);
+        line-height: 1.5;
+    }
 }
 
-@media (max-width: 480px) {
-    .skills-list,
-    .tech-list {
-        grid-template-columns: 1fr;
+@media (max-width: 600px) {
+    .sidebar {
+        padding: 25px 20px;
     }
-
-    .project-item {
-        padding: 20px;
-        margin-bottom: 40px;
+    
+    .sidebar-content {
+        padding: 25px 0;
     }
-
-    .project-tech-list {
-        gap: 8px;
+    
+    .main-content {
+        padding: 0 20px;
     }
-
-    .project-tech-list li {
-        font-size: 11px;
-        padding: 4px 8px;
-    }
-
+    
     .section {
         padding: 40px 0;
     }
-
+    
+    .sidebar-header .name,
+    .sidebar-header .title {
+        font-size: clamp(24px, 7vw, 28px);
+        line-height: 1.2;
+    }
+    
+    .sidebar-header .tagline {
+        font-size: var(--fz-sm);
+        margin-bottom: 25px;
+        line-height: 1.4;
+    }
+    
+    .nav-links {
+        gap: 8px;
+        margin: 25px 0;
+    }
+    
+    .nav-link {
+        font-size: var(--fz-xs);
+        padding: 8px 0;
+    }
+    
+    .social-links {
+        gap: 15px;
+        margin-top: 25px;
+    }
+    
     .section-heading,
     .section-title {
+        font-size: clamp(18px, 5vw, 22px);
         margin-bottom: 30px;
     }
+    
+    .section-number {
+        font-size: clamp(var(--fz-sm), 3vw, var(--fz-md));
+    }
+    
+    .hero-content h1,
+    .hero-greeting {
+        font-size: clamp(var(--fz-xs), 3vw, var(--fz-sm));
+        margin-bottom: 15px;
+    }
+    
+    .hero-content h2,
+    .hero-name,
+    .hero-content h3,
+    .hero-title {
+        font-size: clamp(20px, 7vw, 24px);
+        line-height: 1.3;
+    }
+    
+    .hero-content p,
+    .hero-description {
+        font-size: var(--fz-sm);
+        line-height: 1.6;
+        margin-top: 15px;
+    }
+    
+    .about-text p {
+        font-size: var(--fz-sm);
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+    
+    .project-title {
+        font-size: clamp(16px, 4vw, 18px);
+    }
+    
+    .project-description {
+        font-size: var(--fz-sm);
+        line-height: 1.5;
+    }
+    
+    .contact-title {
+        font-size: clamp(22px, 7vw, 28px);
+    }
+    
+    .contact-description {
+        font-size: var(--fz-sm);
+        line-height: 1.5;
+    }
+    
+    .cta-button,
+    .contact-button,
+    .archive-link {
+        padding: 0.875rem 1.25rem;
+        font-size: var(--fz-xs);
+    }
+    
+    .skills-list,
+    .tech-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .skill-item,
+    .tech-list li {
+        font-size: var(--fz-xs);
+        padding-left: 18px;
+        margin-bottom: 8px;
+    }
+    
+    .project-card {
+        padding: 18px;
+    }
+    
+    .project-tech-list {
+        gap: 6px;
+    }
+    
+    .tech-tag,
+    .project-tech-list li {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+    
+    .footer {
+        margin-top: 35px;
+        padding: 20px 0;
+    }
+    
+    .footer-text {
+        font-size: 11px;
+    }
+    
+    .footer-built {
+        font-size: 10px;
+    }
+}
 
+@media (max-width: 480px) {
+    .sidebar {
+        padding: 20px 15px;
+    }
+    
+    .sidebar-content {
+        padding: 20px 0;
+    }
+    
+    .main-content {
+        padding: 0 15px;
+    }
+    
+    .section {
+        padding: 30px 0;
+    }
+    
+    .sidebar-header .name,
+    .sidebar-header .title {
+        font-size: clamp(22px, 8vw, 26px);
+        line-height: 1.2;
+    }
+    
+    .sidebar-header .tagline {
+        font-size: var(--fz-sm);
+        margin-bottom: 20px;
+        line-height: 1.4;
+    }
+    
+    .nav-links {
+        gap: 6px;
+        margin: 20px 0;
+    }
+    
+    .nav-link {
+        font-size: 10px;
+        padding: 6px 0;
+        letter-spacing: 0.5px;
+    }
+    
+    .social-links {
+        gap: 12px;
+        margin-top: 20px;
+    }
+    
+    .section-heading,
+    .section-title {
+        font-size: clamp(16px, 6vw, 20px);
+        margin-bottom: 25px;
+    }
+    
+    .section-number {
+        font-size: clamp(var(--fz-xs), 3vw, var(--fz-sm));
+    }
+    
+    .hero-content h1,
+    .hero-greeting {
+        font-size: 10px;
+        margin-bottom: 12px;
+    }
+    
+    .hero-content h2,
+    .hero-name,
+    .hero-content h3,
+    .hero-title {
+        font-size: clamp(18px, 8vw, 22px);
+        line-height: 1.3;
+    }
+    
+    .hero-content p,
+    .hero-description {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-top: 12px;
+    }
+    
+    .about-text p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+    
+    .project-title {
+        font-size: clamp(15px, 5vw, 17px);
+    }
+    
+    .project-description {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .contact-title {
+        font-size: clamp(20px, 8vw, 24px);
+    }
+    
+    .contact-description {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+    
+    .cta-button,
+    .contact-button,
+    .archive-link {
+        padding: 0.75rem 1rem;
+        font-size: 10px;
+    }
+    
+    .skills-list,
+    .tech-list {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+    
+    .skill-item,
+    .tech-list li {
+        font-size: 10px;
+        padding-left: 15px;
+        margin-bottom: 6px;
+    }
+    
+    .project-card {
+        padding: 15px;
+    }
+    
+    .project-tech-list {
+        gap: 5px;
+    }
+    
+    .tech-tag,
+    .project-tech-list li {
+        font-size: 9px;
+        padding: 2px 6px;
+    }
+    
     .footer {
         margin-top: 30px;
-        padding: 20px 0;
+        padding: 15px 0;
+    }
+    
+    .footer-text {
+        font-size: 10px;
+    }
+    
+    .footer-built {
+        font-size: 9px;
     }
 }
 

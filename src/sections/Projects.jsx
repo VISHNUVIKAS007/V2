@@ -14,7 +14,10 @@ const Projects = () => {
                     transition={{duration: 0.6}}
                     viewport={{once: true}}
                 >
-                    <h2 className="section-title">Projects</h2>
+                    <h2 className="section-title">
+                        <span className="section-number">03.</span>
+                        Projects
+                    </h2>
 
                     <div className="projects-grid">
                         {projects.map((project, index) => (
