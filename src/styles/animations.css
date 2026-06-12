@@ -513,3 +513,57 @@
     filter: blur(0);
     transform: translateX(0);
 }
+/* Custom Cursor */
+@media (hover: hover) and (pointer: fine) {
+    body.custom-cursor,
+    body.custom-cursor a,
+    body.custom-cursor button,
+    body.custom-cursor input,
+    body.custom-cursor textarea,
+    body.custom-cursor select {
+        cursor: none;
+    }
+}
+
+.cursor-dot,
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 9999;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    margin: -4px 0 0 -4px;
+    background-color: var(--color-green);
+}
+
+.cursor-ring {
+    width: 36px;
+    height: 36px;
+    margin: -18px 0 0 -18px;
+    border: 1.5px solid rgba(100, 255, 218, 0.6);
+    transition: width 0.25s var(--easing), height 0.25s var(--easing),
+        margin 0.25s var(--easing), background-color 0.25s var(--easing),
+        opacity 0.3s ease;
+}
+
+.cursor-ring--hover {
+    width: 56px;
+    height: 56px;
+    margin: -28px 0 0 -28px;
+    background-color: var(--color-green-tint);
+    border-color: var(--color-green);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cursor-dot,
+    .cursor-ring {
+        display: none;
+    }
+}
