@@ -1,5 +1,4 @@
 import {motion} from 'framer-motion';
-import {personalData} from '../data/personal';
 
 const About = () => {
     const skills = [
@@ -59,7 +58,7 @@ const About = () => {
                         </p>
 
                         <ul className="skills-list">
-                            {skills.map((skill, index) => (
+                            {skills.map((skill) => (
                                 <li key={skill} className="skill-item">
                                     {skill}
                                 </li>

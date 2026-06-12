@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 
+const navItems = [
+    // { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' }
+];
+
 const NavLinks = () => {
     const [activeSection, setActiveSection] = useState('home');
-
-    const navItems = [
-        // { name: 'Home', href: '#home' },
-        { name: 'About', href: '#about' },
-        { name: 'Experience', href: '#experience' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Contact', href: '#contact' }
-    ];
 
     useEffect(() => {
         const handleScroll = () => {
