@@ -22,7 +22,7 @@ const Projects = () => {
                     <div className="projects-grid">
                         {projects.map((project, index) => (
                             <motion.div
-                                key={project.id}
+                                key={project.title}
                                 className="project-card"
                                 initial={{opacity: 0, y: 30}}
                                 whileInView={{opacity: 1, y: 0}}

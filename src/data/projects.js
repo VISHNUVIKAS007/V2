@@ -1,5 +1,21 @@
 export const projects = [
     {
+        title: 'My Routine',
+        description: 'A cross-platform routine and habit tracker with a weekly scoreboard, built with Flutter for Android, iOS, and Web. Features daily tracking with streaks, a GitHub-style habit heatmap, per-routine reminders, and an offline-first architecture backed by Firebase with a Hive write queue.',
+        image: '/projects/my-routine.jpg',
+        tech: ['Flutter', 'Dart', 'Firebase', 'Offline-first'],
+        github: 'https://github.com/VISHNUVIKAS007/MyRoutine',
+        external: 'https://github.com/VISHNUVIKAS007/MyRoutine'
+    },
+    {
+        title: 'My Gym',
+        description: 'A full fitness platform consisting of a Flutter mobile app for tracking workouts, training programs, and progress — with biometric login and offline support — plus a Flutter web admin dashboard with real-time KPIs, a wizard-based program builder, exercise library, and activity reports, all backed by Firebase.',
+        image: '/projects/my-gym.jpg',
+        tech: ['Flutter', 'Dart', 'Firebase', 'Flutter Web'],
+        github: 'https://github.com/VISHNUVIKAS007/my-gym-mobile',
+        external: 'https://github.com/VISHNUVIKAS007/my-gym-mobile'
+    },
+    {
         title: 'Old Monks Code Blog Application',
         description: 'A technical thought sharing blog platform designed to help students learn and share knowledge. Built with Flutter to provide a cross-platform experience for educational content sharing and community building.',
         image: '/projects/blog-app.jpg',
