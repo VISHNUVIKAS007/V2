@@ -1,5 +1,13 @@
 export const projects = [
     {
+        title: 'Recipe App',
+        description: 'A Flutter-based recipe discovery and management app backed by Firebase. Browse and search recipes, save favorites, view detailed ingredient lists and step-by-step cooking instructions, all with a clean cross-platform experience on Android, iOS, and Web.',
+        image: '/projects/recipe-app.jpg',
+        tech: ['Flutter', 'Dart', 'Firebase', 'Cross-platform'],
+        github: 'https://github.com/VISHNUVIKAS007/Recipie',
+        external: 'https://github.com/VISHNUVIKAS007/Recipie'
+    },
+    {
         title: 'My Routine',
         description: 'A cross-platform routine and habit tracker with a weekly scoreboard, built with Flutter for Android, iOS, and Web. Features daily tracking with streaks, a GitHub-style habit heatmap, per-routine reminders, and an offline-first architecture backed by Firebase with a Hive write queue.',
         image: '/projects/my-routine.jpg',
