@@ -1,5 +1,13 @@
 export const projects = [
     {
+        title: 'AI Interview Coach',
+        description: 'A full-stack mobile/web app for practicing technical, behavioral, DSA, and system-design interviews. Built with Flutter (Web/Android/iOS) and a Spring Boot backend on Firebase, it generates and evaluates interview questions via a multi-provider LLM layer (Claude, Gemini, Groq) with automatic failover, and tracks per-topic weaknesses to adapt difficulty over time. Features include a Daily Interview mode, voice-based answering, an Anki-style spaced-repetition flashcard system, achievement badges, and progress analytics.',
+        image: '/projects/ai-interview-coach.jpg',
+        tech: ['Flutter', 'Spring Boot', 'Firebase', 'Multi-provider LLM'],
+        github: '#',
+        external: '#'
+    },
+    {
         title: 'Recipe App',
         description: 'A Flutter-based recipe discovery and management app backed by Firebase. Browse and search recipes, save favorites, view detailed ingredient lists and step-by-step cooking instructions, all with a clean cross-platform experience on Android, iOS, and Web.',
         image: '/projects/recipe-app.jpg',
