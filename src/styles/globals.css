@@ -79,9 +79,16 @@ body {
 /* Sidebar Styles */
 .sidebar-wrapper {
     width: 40%;
-    position: fixed;
+    /* `sticky` (not `fixed`) deliberately: a fixed-position element is
+       always promoted to its own compositing layer, and in software
+       rendering (no GPU / blocklisted driver — common on laptops) that
+       layer promotion has been observed to corrupt text glyph rasterization
+       in the adjacent scrolling content, clipping the leading character of
+       lines. `sticky` keeps the same visually-pinned sidebar without that
+       always-on layer. */
+    position: sticky;
     height: 100vh;
-    left: 3%;
+    margin-left: 3%;
     top: 0;
     background: var(--color-navy);
     z-index: 10;
@@ -196,8 +203,9 @@ body {
 
 /* Main Content */
 .main-content-wrapper {
-    margin-left: 75%;
-    flex: 1;
+    margin-left: 40%;
+    width: calc(100% - 40%);
+    min-width: 0;
     min-height: 100vh;
     background: var(--color-navy);
 }
