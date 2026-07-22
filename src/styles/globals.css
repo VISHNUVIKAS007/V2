@@ -79,6 +79,10 @@ body {
 /* Sidebar Styles */
 .sidebar-wrapper {
     width: 40%;
+    /* Unlike `fixed`, `sticky` participates in normal flex flow, so it must
+       not shrink when paired with .main-content-wrapper's `flex: 1` below —
+       otherwise the flex algorithm splits the deficit across both. */
+    flex-shrink: 0;
     /* `sticky` (not `fixed`) deliberately: a fixed-position element is
        always promoted to its own compositing layer, and in software
        rendering (no GPU / blocklisted driver — common on laptops) that
@@ -203,8 +207,10 @@ body {
 
 /* Main Content */
 .main-content-wrapper {
-    margin-left: 40%;
-    width: calc(100% - 40%);
+    /* Fills whatever space .sidebar-wrapper (flex-shrink: 0, sized by its
+       own width/margin) doesn't take — not an independent percentage, so
+       the two can't jointly over-claim the row and get shrunk. */
+    flex: 1;
     min-width: 0;
     min-height: 100vh;
     background: var(--color-navy);
@@ -838,12 +844,6 @@ body {
         width: 45%;
     }
 
-    .main-content-wrapper {
-        margin-left: 45%;
-        width: calc(100% - 45%);
-        min-width: 0;
-    }
-
     .sidebar {
         padding: 0 25px;
     }
@@ -1362,10 +1362,5 @@ body {
 @media (max-width: 1600px) and (min-width: 1201px) {
     .sidebar-wrapper {
         width: 32%;
-    }
-    .main-content-wrapper {
-        margin-left: 32%;
-        width: calc(100% - 32%);
-        min-width: 0;
     }
 }
