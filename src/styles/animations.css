@@ -401,6 +401,10 @@
 .layout-container {
     opacity: 0;
     transition: opacity 0.5s ease;
+    /* Same fail-safe as .reveal below: guarantees the whole app becomes
+       visible even if the `loaded` class is never added (e.g. the mount
+       effect in Layout.jsx doesn't run). */
+    animation: reveal-fallback 0s linear 1s forwards;
 }
 
 .layout-container.loaded {
@@ -565,5 +569,38 @@
     .cursor-dot,
     .cursor-ring {
         display: none;
+    }
+}
+
+/*
+ * Fail-safe for JS-driven entrance animations (Framer Motion).
+ *
+ * Text throughout the site starts at opacity: 0 and is only made visible by
+ * Framer Motion's `animate`/`whileInView` running in JS. If that never
+ * completes for any reason (a script error elsewhere, an extension
+ * throttling requestAnimationFrame/IntersectionObserver, the tab loading in
+ * the background, fractional display scaling breaking IntersectionObserver
+ * thresholds, etc.) the text is stuck invisible forever even though the
+ * rest of the page renders fine.
+ *
+ * CSS animations are given higher cascade priority than plain inline
+ * styles (even without !important), so this quietly forces opacity back to
+ * 1 after a short delay if Framer Motion hasn't already done so. In the
+ * normal case Framer Motion finishes well under a second and this never
+ * has anything to override.
+ */
+@keyframes reveal-fallback {
+    to {
+        opacity: 1;
+    }
+}
+
+.reveal {
+    animation: reveal-fallback 0s linear 2s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        animation-delay: 0s;
     }
 }

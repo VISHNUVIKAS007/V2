@@ -9,6 +9,7 @@ const Projects = () => {
         <section id="projects" className="section">
             <div className="section-content">
                 <motion.div
+                    className="reveal"
                     initial={{opacity: 0, y: 30}}
                     whileInView={{opacity: 1, y: 0}}
                     transition={{duration: 0.6}}
@@ -23,7 +24,7 @@ const Projects = () => {
                         {projects.map((project, index) => (
                             <motion.div
                                 key={project.title}
-                                className="project-card"
+                                className="project-card reveal"
                                 initial={{opacity: 0, y: 30}}
                                 whileInView={{opacity: 1, y: 0}}
                                 transition={{duration: 0.6, delay: index * 0.1}}

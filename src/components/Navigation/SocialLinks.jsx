@@ -23,7 +23,7 @@ const SocialLinks = () => {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="social-link"
+                        className="social-link reveal"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}

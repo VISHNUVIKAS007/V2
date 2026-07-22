@@ -9,7 +9,7 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="contact-content"
+                className="contact-content reveal"
             >
                 <h2 className="section-heading">
                     <span className="section-number">04.</span>

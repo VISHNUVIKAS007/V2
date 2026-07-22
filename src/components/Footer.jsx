@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <motion.div
-                className="footer-content"
+                className="footer-content reveal"
                 initial={{opacity: 0, y: 20}}
                 whileInView={{opacity: 1, y: 0}}
                 transition={{duration: 0.6}}
